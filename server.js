@@ -23,10 +23,11 @@ mongoose
   )
   .catch((error) => console.log(error));
 
+//Movies Index page
 server.get("/movies", async (request, response) => {
   const { filter } = request.query;
   const movies = await Movie.find();
-  if (filter !== "all") {
+  if (filter === "R" || filter === "PG" || filter === "PG-13") {
     console.log(filter);
     const filteredMovies = movies.filter((movie) => movie.ageRating === filter);
     response.render("moviesIndex", { movies: filteredMovies });
@@ -35,9 +36,10 @@ server.get("/movies", async (request, response) => {
   }
 });
 
+//Movies post route
 server.post("/movies", async (request, response) => {
   const { title, year, rating, poster, director, cast } = request.body;
-  //   console.log(newMovie);
+  console.log(request.body);
   const addNewMovie = new Movie({
     title,
     year,
@@ -52,10 +54,12 @@ server.post("/movies", async (request, response) => {
     .catch((error) => console.log(error));
 });
 
+//Movies new movie route
 server.get("/movies/new", (request, response) => {
   response.render("moviesNew");
 });
 
+//Edit Movie page route
 server.get("/movies/:id/edit", async (request, response) => {
   const { id } = request.params;
   const editMovie = await Movie.findById(id)
@@ -63,12 +67,14 @@ server.get("/movies/:id/edit", async (request, response) => {
     .catch((error) => console.log(error));
 });
 
+//Show movie route
 server.get("/movies/:id", async (request, response) => {
   const { id } = request.params;
   const showMovie = await Movie.findById(id);
   response.render("movieShow", { showMovie });
 });
 
+//Delete movie route
 server.delete("/movies/:id", async (request, response) => {
   const { id } = request.params;
   await Movie.findByIdAndDelete(id)
@@ -76,6 +82,7 @@ server.delete("/movies/:id", async (request, response) => {
     .catch((error) => console.log(error));
 });
 
+//Patch route
 server.patch("/movies/:id", async (request, response) => {
   const { id } = request.params;
   const updates = request.body;
@@ -83,8 +90,9 @@ server.patch("/movies/:id", async (request, response) => {
   await response.redirect("/movies");
 });
 
+//Tickets single movie route
 server.get("/movies/tickets/:id", async (request, response) => {
   const { id } = request.params;
   const movie = await Movie.findById(id);
-  response.render("movieTicketsNew", { movie });
+  response.render("moviesTicketsNew", { movie });
 });
