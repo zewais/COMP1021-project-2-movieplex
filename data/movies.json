@@ -1,0 +1,62 @@
+[
+  {
+    "title": "Avatar 2",
+    "year": 2022,
+    "poster": "https://xl.movieposterdb.com/22_11/2022/1630029/xl_avatar-the-way-of-water-movie-poster_9672cea6.jpg",
+    "rating": 7.8,
+    "director": "James Cameron",
+    "cast": ["Sam Worthington", "Zoe Saldana", "Sigourney Weaver"],
+    "showtimes": ["10:00 AM", "1:30 PM", "5:00 PM", "8:30 PM"],
+    "genre": "Science Fiction",
+    "ageRating": "PG-13",
+    "description": "Jake Sully and Neytiri have formed a family and are doing anything they can to stay together. However, they must leave their home and explore the regions of Pandora. When an ancient threat resurfaces, Jake must fight a difficult war against the humans."
+  },
+  {
+    "title": "Blade",
+    "year": 2025,
+    "poster": "https://xl.movieposterdb.com/21_07/2004/359013/xl_359013_4a802ca6.jpg?v=2025-02-26%2012:34:49",
+    "rating": 7.5,
+    "director": "Bassam Tariq",
+    "cast": ["Mahershala Ali", "Lyrica Okano", "Wunmi Mosaku"],
+    "showtimes": ["11:00 AM", "2:30 PM", "6:00 PM", "9:30 PM"],
+    "genre": "Action",
+    "ageRating": "R",
+    "description": "Blade, a half-mortal, half-immortal vampire hunter, seeks revenge against the creatures that killed his mother. He teams up with a group of vampire hunters to take down the vampire overlords."
+  },
+  {
+    "title": "Mission: Impossible The Final Reckoning",
+    "year": 2025,
+    "poster": "https://xl.movieposterdb.com/24_11/2025/9603208/xl_mission-impossible-the-final-reckoning-movie-poster_0d8f7365.jpg",
+    "rating": 8.0,
+    "director": "Christopher McQuarrie",
+    "cast": ["Tom Cruise", "Rebecca Ferguson", "Simon Pegg"],
+    "showtimes": ["10:30 AM", "1:45 PM", "5:00 PM", "8:15 PM"],
+    "genre": "Action",
+    "ageRating": "PG-13",
+    "description": "concludes the final chapter of Ethan Hunt's journey as he faces his most dangerous mission yet. With the fate of the world at stake, he must assemble a team to stop a global catastrophe."
+  },
+  {
+    "title": "Sonic the Hedgehog 3",
+    "year": 2025,
+    "poster": "https://xl.movieposterdb.com/24_11/2024/18259086/xl_sonic-the-hedgehog-3-movie-poster_cb774008.jpg?v=2025-03-10%2006:43:00",
+    "rating": 7.2,
+    "director": "Jeff Fowler",
+    "cast": ["Ben Schwartz", "Idris Elba", "Tika Sumpter"],
+    "showtimes": ["12:00 PM", "3:15 PM", "6:30 PM", "9:45 PM"],
+    "genre": "Family",
+    "ageRating": "PG",
+    "description": "Sonic, Tails, and Knuckles team up to stop Dr. Robotnik from taking over the world. They must navigate new challenges and face off against a powerful new enemy."
+  },
+  {
+    "title": "Avengers: Infinity War",
+    "year": 2018,
+    "poster": "https://xl.movieposterdb.com/20_12/2018/4154756/xl_4154756_c3b270fa.jpg?v=2025-03-27%2018:56:07",
+    "rating": 8.3,
+    "director": "Joe Russo, Anthony Russo",
+    "cast": ["Chris Hemsworth", "Scarlett Johansson", "Robert Downey Jr."],
+    "showtimes": ["10:15 AM", "1:30 PM", "4:45 PM", "8:00 PM"],
+    "genre": "Action",
+    "ageRating": "PG-13",
+    "description": "The Avengers and their allies must be willing to sacrifice all in an attempt to defeat the powerful Thanos before his blitz of devastation and ruin puts an end to the universe."
+  }
+]
