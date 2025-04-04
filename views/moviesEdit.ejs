@@ -1,39 +1,68 @@
 
-  <%- include('./partials/navBar') %>
+<%- include('./partials/navBar') %>
       
-      <form action="/movies/<%= editMovie._id %>?_method=PATCH" method="post" class="mx-5">
-        <h1>Edit movie</h1>
-        <div class="mb-3 mx-5 col-lg-6 col-md-6" >
-            <label for="movieTitle">Enter a movie title: </label>
-            <input type="text" class="form-control" name="title" id="movieTitle" required value="<%= editMovie.title %>">
-        </div>
-        <div class="mb-3 mx-5 col-lg-3 col-md-4 col-sm-6" >
-            <label for="movieYear">Enter year of production: </label>
-            <input type="number" class="form-control" name="year" id="movieYear" min="1900" max="2024" placeholder="1900" required value="<%= editMovie.year %>">
-        </div>
-        <div class="mb-3 mx-5 col-lg-3 col-md-4 col-sm-6">
-            <label for="movieRating">IMDB Rating: </label>
-            <input type="number" class="form-control" name="rating" id="movieRating" min="0" max="10" step="0.1" placeholder="0" value="<%= editMovie.rating %>">
-        </div>
-        <div class="mb-3 mx-5 col-lg-6 col-md-6" >
-            <label for="moviePoster">Enter a movie poster URL address: </label>
-            <input type="text" class="form-control" name="poster" id="moviePoster" required value="<%=editMovie.poster %>">
-        </div>
-        <div class="mb-3 mx-5 col-lg-6 col-md-6" >
-            <label for="movieDirector">Enter the Director's name: </label>
-            <input type="text" class="form-control" name="director" id="movieDirector" required value="<%= editMovie.director %>">
-        </div>
-        <div class="mb-3 mx-5 col-lg-6 col-md-6" >
-            <p>Enter cast names</p>
-            <label for="movieCast-1">Enter Cast 1 </label>
-            <input type="text" class="form-control" name="cast" id="movieCast-1" required value="<%= editMovie.cast[0] %>">
-            <label for="movieCast-1">Enter Cast 2</label>
-            <input type="text" class="form-control" name="cast" id="movieCast-1" required value="<%= editMovie.cast[1] %>">
-            <label for="movieCast-1">Enter Cast 3 </label>
-            <input type="text" class="form-control" name="cast" id="movieCast-1" required value="<%= editMovie.cast[2] %>">
-            <button class="btn btn-primary mt-5">Submit Movie</button>
-        </div>
+<form action="/movies/<%= editMovie._id %>?_method=PATCH" method="post" class="mx-5">
+  <h1>Edit <%= editMovie.title %></h1>
+  <div class="mb-3 mx-5 col-lg-6 col-md-6" >
+      <label for="movieTitle">Enter a movie title: </label>
+      <input type="text" class="form-control" name="title" id="movieTitle" required value="<%= editMovie.title %>">
+  </div>
+  <div class="mb-3 mx-5 col-lg-3 col-md-4 col-sm-6" >
+      <label for="movieYear">Enter year of production: </label>
+      <input type="number" class="form-control" name="year" id="movieYear" min="1900" max="2025" placeholder="1900" required value="<%= editMovie.year %>">
+  </div>
+  <div class="mb-3 mx-5 col-lg-3 col-md-4 col-sm-6">
+      <label for="movieRating">IMDB Rating: </label>
+      <input type="number" class="form-control" name="rating" id="movieRating" min="0" max="10" step="0.1" placeholder="0" value="<%= editMovie.rating %>" required>
+  </div>
+  <div class="mb-3 mx-5 col-lg-6 col-md-6" >
+      <label for="moviePoster">Enter a movie poster URL address: </label>
+      <input type="text" class="form-control" name="poster" id="moviePoster" required value="<%= editMovie.poster %>">
+  </div>
+  <div class="mb-3 mx-5 col-lg-6 col-md-6" >
+      <label for="movieDirector">Enter the Director's name: </label>
+      <input type="text" class="form-control" name="director" id="movieDirector" required value="<%= editMovie.director %>">
+  </div>
+  <div class="mb-3 mx-5 col-lg-6 col-md-6" >
+      <p>Enter cast names: </p>
+      <label for="movieCast-1">Enter Cast 1 </label>
+      <input type="text" class="form-control" name="cast" id="movieCast-1" required value="<%= editMovie.cast[0] %>">
+      <label for="movieCast-2">Enter Cast 2</label>
+      <input type="text" class="form-control" name="cast" id="movieCast-2" required value="<%= editMovie.cast[1] %>">
+      <label for="movieCast-3">Enter Cast 3 </label>
+      <input type="text" class="form-control" name="cast" id="movieCast-3" required value="<%= editMovie.cast[2] %>">
+      
+  </div>
+  <div class="mb-3 mx-5 col-lg-6 col-md-6" >
+    <label for="showtimes">Enter showtime 1: </label>
+    <br>
+    <% showtimesArray = ['10:00 AM','10:30 AM','11:00 AM','11:30 AM','12:00 PM', '12:30 PM', '1:00 PM', '1:30 PM', '2:00 PM', '2:30 PM', '3:00 PM', '3:30 PM', '4:00 PM', '4:30 PM', '5:00 PM', '5:30 PM', '6:00 PM', '6:30 PM', '7:00 PM', '7:30 PM','8:00 PM', '8:30 PM','9:00 PM', '9:30 PM'] %>
+    <% for(let i = 0; i < showtimesArray.length; i++) {%>
+        <input type="checkbox" name="showtimes" id="showtimes" value="<%= showtimesArray[i] %>" <%= editMovie.showtimes.includes(showtimesArray[i]) ? "checked" : "" %>>
+        <label for="<%= showtimesArray[i] %>"><%= showtimesArray[i] %></label>
+        <br>
+    <% } %>
+</div>
+  <div class="mb-3 mx-5 col-lg-6 col-md-6" >
+      <label for="genre">Genre </label>
+      <input type="text" class="form-control" name="genre" id="genre" required value="<%= editMovie.genre %>">
+  </div>
+  <div class="mb-3 mx-5 col-lg-6 col-md-6" >
+      <label for="ageRating">Age Rating </label>
+      <select name="ageRating" id="ageRating" class="form-control">
+          <option value="PG" <%= editMovie.ageRating == "PG" ? "selected" : "" %>>PG</option>
+          <option value="PG-13" <%= editMovie.ageRating == "PG-13" ? "selected" : "" %>>PG-13</option>
+          <option value="R" <%= editMovie.ageRating == "R" ? "selected" : "" %>>R</option>
+      </select>
+  </div>
+<div class="mb-3 mx-5 col-lg-6 col-md-6" >
+      <label for="description">Description </label>
+      <textarea name="description" id="textarea" class="form-control" placeholder="Enter a movie description"><%= editMovie.description %></textarea>
+  </div>
+  <div class="mb-3 mx-5 col-lg-6 col-md-6" >
+      <button class="btn btn-primary mt-5">Edit Movie</button>
+  </div>
 
-      </form>
+</form>
 </body>
 </html>

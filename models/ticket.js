@@ -7,6 +7,10 @@ const ticketSchema = new Schema({
     ref: "Movie",
     required: true,
   },
+  movieTitle: {
+    type: String,
+    required: true,
+  },
   showtime: {
     type: String,
     required: true,

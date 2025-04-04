@@ -9,7 +9,7 @@
         </div>
         <div class="mb-3 mx-5 col-lg-3 col-md-4 col-sm-6" >
             <label for="movieYear">Enter year of production: </label>
-            <input type="number" class="form-control" name="year" id="movieYear" min="1900" max="2024" placeholder="1900" required>
+            <input type="number" class="form-control" name="year" id="movieYear" min="1900" max="2025" placeholder="1900" required>
         </div>
         <div class="mb-3 mx-5 col-lg-3 col-md-4 col-sm-6">
             <label for="movieRating">IMDB Rating: </label>
@@ -35,71 +35,13 @@
         </div>
         <div class="mb-3 mx-5 col-lg-6 col-md-6" >
             <label for="showtimes">Enter showtime 1: </label>
-            <select name="showtimesHH-1" id="">
-                <% for(let i = 1; i < 13; i++) {%>
-                    <option value="<%= i %>"><%= i %></option>
-                <%}%>
-            </select>
-            :
-            <select name="showtimesMM-1" id="">
-                <option value="00">00</option>
-                <option value="30">30</option>
-            </select>
-            <select name="showtimesAPM-1" id="">
-                <option value="PM">PM</option>
-                <option value="AM">AM</option>
-            </select>
-        </div>
-        <div class="mb-3 mx-5 col-lg-6 col-md-6" >
-            <label for="showtimes">Enter showtime 2: </label>
-            <select name="showtimesHH-2" id="">
-                <% for(let i = 1; i < 13; i++) {%>
-                    <option value="<%= i %>"><%= i %></option>
-                <%}%>
-            </select>
-            :
-            <select name="showtimesMM-2" id="">
-                <option value="00">00</option>
-                <option value="30">30</option>
-            </select>
-            <select name="showtimesAPM-2" id="">
-                <option value="PM">PM</option>
-                <option value="AM">AM</option>
-            </select>
-        </div>
-        <div class="mb-3 mx-5 col-lg-6 col-md-6" >
-            <label for="showtimes">Enter showtime 3: </label>
-            <select name="showtimesHH-3" id="">
-                <% for(let i = 1; i < 13; i++) {%>
-                    <option value="<%= i %>"><%= i %></option>
-                <%}%>
-            </select>
-            :
-            <select name="showtimesMM-3" id="">
-                <option value="00">00</option>
-                <option value="30">30</option>
-            </select>
-            <select name="showtimesAPM-3" id="">
-                <option value="PM">PM</option>
-                <option value="AM">AM</option>
-            </select>
-        </div>
-        <div class="mb-3 mx-5 col-lg-6 col-md-6" >
-            <label for="showtimes">Enter showtime 4: </label>
-            <select name="showtimesHH-4" id="">
-                <% for(let i = 1; i < 13; i++) {%>
-                    <option value="<%= i %>"><%= i %></option>
-                <%}%>
-            </select>
-            :
-            <select name="showtimesMM-4" id="">
-                <option value="00">00</option>
-                <option value="30">30</option>
-            </select>
-            <select name="showtimesAPM-4" id="">
-                <option value="PM">PM</option>
-                <option value="AM">AM</option>
-            </select>
+            <br>
+            <% showtimesArray = ['10:00 AM','10:30 AM','11:00 AM','11:30 AM','12:00 PM', '12:30 PM', '1:00 PM', '1:30 PM', '2:00 PM', '2:30 PM', '3:00 PM', '3:30 PM', '4:00 PM', '4:30 PM', '5:00 PM', '5:30 PM', '6:00 PM', '6:30 PM', '7:00 PM', '7:30 PM','8:00 PM', '8:30 PM','9:00 PM', '9:30 PM'] %>
+            <% for(let i = 0; i < showtimesArray.length; i++) {%>
+                <input type="checkbox" name="showtimes" id="showtimes" value="<%= showtimesArray[i] %>">
+                <label for="<%= showtimesArray[i] %>"><%= showtimesArray[i] %></label>
+                <br>
+            <% } %>
         </div>
         <div class="mb-3 mx-5 col-lg-6 col-md-6" >
             <label for="genre">Genre </label>
