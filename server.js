@@ -29,7 +29,6 @@ server.get("/movies", async (request, response) => {
   const { filter } = request.query;
   const movies = await Movie.find();
   if (filter === "R" || filter === "PG" || filter === "PG-13") {
-    console.log(filter);
     const filteredMovies = movies.filter((movie) => movie.ageRating === filter);
     response.render("moviesIndex", { movies: filteredMovies, filter });
   } else {
@@ -45,7 +44,6 @@ server.get("/movies/tickets", async (request, response) => {
 
 //Tickets post route
 server.post("/movies/tickets", async (request, response) => {
-  console.log(request.body);
   const {
     movieId,
     movieTitle,
@@ -81,7 +79,6 @@ server.post("/movies", async (request, response) => {
     ageRating,
     description,
   } = request.body;
-  console.log(request.body);
   const addNewMovie = new Movie({
     title,
     year,
@@ -109,7 +106,6 @@ server.get("/movies/new", (request, response) => {
 server.get("/movies/:id/edit", async (request, response) => {
   const { id } = request.params;
   const editMovie = await Movie.findById(id);
-  console.log(editMovie);
   response.render("moviesEdit", { editMovie });
 });
 
@@ -141,6 +137,13 @@ server.get("/movies/tickets/:id", async (request, response) => {
   const { id } = request.params;
   const movie = await Movie.findById(id);
   response.render("moviesTicketsNew", { movie });
+});
+
+//Tickets delete route
+server.delete("/movies/tickets/:id", async (request, response) => {
+  const { id } = request.params;
+  await Ticket.findByIdAndDelete(id);
+  response.redirect("/movies/tickets");
 });
 
 //Not Found page route

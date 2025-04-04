@@ -15,7 +15,7 @@
             </select>
             <input type="submit" name="" id="">
           </form>
-          <%- filter === "all" ? "" : `<p class="lead text-muted">Showing movies with age rating: ${filter}</p>` %>
+          <%- (filter === "all" || filter === undefined) ? "" : `<p class="lead text-muted">Showing movies with age rating: ${filter}</p>` %>
           <h5 class="lead text-muted">Movies Available (<%= movies.length %>)</h5>
         </div>
       </div>
@@ -39,7 +39,7 @@
                       <button class="btn btn-sm btn-danger position-end">Delete</button>
                     </form>
                   </div>
-                  <a href="/movies/tickets/<%= movies[i]._id %>"><button type="button" class="btn btn-sm btn-primary">Buy Tickets</button></a>
+                  <a href="/movies/tickets/<%= movies[i]._id %>"><button type="button" class="btn btn-sm btn-primary">Book Tickets</button></a>
                 </div>
               </div>
             </div>
