@@ -6,7 +6,7 @@ const methodOverride = require("method-override");
 require("dotenv").config();
 
 const server = express();
-const port = 3000;
+const port = 8080;
 const dbURI = process.env.DB_URI;
 
 server.set("view engine", "ejs");
